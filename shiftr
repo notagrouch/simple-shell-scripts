@@ -28,13 +28,21 @@ extract_datetime() {
 # Function to construct destination path
 construct_path() {
   # Use date and time variables to construct destination path
+  dest_path="$dest_dir/$year/${year:2}-$month/$year-$month-$day/$filename"
   # Return destination path
+  echo "$dest_path"
 }
 
 # Function to move file
 move_file() {
   # Use rsync to move file to destination path
-  # Print success or error message
+  if rsync -a "$file" "$dest_path"; then
+    # Print success message
+    echo "Success: Moved $file to $dest_path"
+  else
+    # Print error message
+    echo "Error: Unable to move $file to $dest_path"
+  fi
 }
 
 # Set up command line options
