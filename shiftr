@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Set up variables
+ext1="jpg"
+ext2="mp4"
+source_dir="/path/to/source"
+dest_dir="/path/to/destination"
+
+# Set up functions
+
+# Function to extract date and time from filename
+extract_datetime() {
+  # Extract date and time from filename using regex
+  # Store date and time in variables
+}
+
+# Function to construct destination path
+construct_path() {
+  # Use date and time variables to construct destination path
+  # Return destination path
+}
+
+# Function to move file
+move_file() {
+  # Use rsync to move file to destination path
+  # Print success or error message
+}
+
+# Set up command line options
+
+# Option to run in test/dry run mode
+if [ "$1" == "-n" ]; then
+  test_mode=true
+  shift
+fi
+
+# Option to run quietly
+if [ "$1" == "-q" ]; then
+  quiet_mode=true
+  shift
+fi
+
+# Loop through files in source directory
+for file in "$source_dir"/*; do
+  # Extract file extension
+  # If file extension is not ext1 or ext2, skip file
+  # Extract date and time from filename
+  # Construct destination path
+  # If not in test mode, move file
+  # Print success or error message
+done
+
